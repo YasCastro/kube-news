@@ -10,7 +10,15 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Docker build kubenews
-        run: echo "Docker build webapp"
+        uses: docker/build-push-action@v4.1.1
+        with:
+          context: ./kube-news
+          file: ./kube-news/Dockerfile
+          push: true
+          tags: |
+            yazzcastro/kube-news:v1
+            yazzcastro/kube-news:latest
+    
   CD:
     runs-on: ubuntu-latest
     needs: [CI]

@@ -12,8 +12,8 @@ jobs:
       - name: Docker build kubenews
         uses: docker/build-push-action@v4.1.1
         with:
-          context: ./kube-news
-          file: ./kube-news/Dockerfile
+          context: ./
+          file: ./Dockerfile
           push: true
           tags: |
             yazzcastro/kube-news:v1

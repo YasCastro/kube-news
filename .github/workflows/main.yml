@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Docker build kubenews
+      - name: Docker build kubenews 
         run: echo "Docker build webapp"
   CD:
     runs-on: ubuntu-latest

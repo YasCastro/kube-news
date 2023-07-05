@@ -9,8 +9,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+<<<<<<< HEAD
       - name: Docker build kubenews 
         run: echo "Docker build webapp"
+=======
+      - name: Docker build kubenews
+        uses: docker/build-push-action@v4.1.1
+        with:
+          context: ./
+          file: ./Dockerfile
+          push: true
+          tags: |
+            yazzcastro/kube-news:v1
+            yazzcastro/kube-news:latest
+    
+>>>>>>> 1125767ab5212125638f35531d3afd2282e3b8f1
   CD:
     runs-on: ubuntu-latest
     needs: [CI]
